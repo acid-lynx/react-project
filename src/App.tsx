@@ -1,5 +1,5 @@
 import logo from './assets/images/react-png.svg'
-import './assets/style.css'
+import './assets/style.scss'
 
 import { Counter } from './components/Counter'
 

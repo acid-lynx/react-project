@@ -71,10 +71,9 @@ module.exports = [                 // also antfu plugin can be used for setup
   },
   {
     ignores: [
-      // removes config files from TS check (need to be changed after TS migration)
-      'eslint.config.js',
-      'webpack.config.js',
       '*.config.js',
+      'eslint.config.js',
+      'webpack.config.ts',
     ],
   },
 ]

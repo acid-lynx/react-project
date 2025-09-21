@@ -1,9 +1,21 @@
-function buildRules() {
+import webpack from 'webpack';
+
+export function buildLoaders(): webpack.RuleSetRule[] {
   return [
     {
-      test: /\.(ts|js)x?$/,
+      test: /\.(js|jsx|tsx)$/,
       exclude: /node_modules/,
-      use: ['babel-loader'],
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        }
+      }
+    },
+    {
+      test: /\.tsx?$/,
+      use: 'ts-loader',
+      exclude: /node_modules/,
     },
     {
       test: /\.(s[ac]ss|css)$/,
@@ -21,5 +33,3 @@ function buildRules() {
     },
   ]
 }
-
-module.exports = buildRules
